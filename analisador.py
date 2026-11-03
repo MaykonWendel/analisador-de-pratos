@@ -31,9 +31,12 @@ MODELO = [
 client = genai.Client(api_key=CHAVE)  # usa GEMINI_API_KEY do ambiente
 
 PROMPT = (
-    "Analise o prato da imagem. Responda apenas em JSON com os campos: "
+    "Analise a imagem. Responda apenas em JSON com os campos: "
+    "e_prato (booleano: true somente se a imagem mostra comida ou um prato, "
+    "false caso contrário), "
     "nome (string), ingredientes (lista de strings), "
-    "culinaria (string), confianca (numero de 0 a 1)."
+    "culinaria (string) e confianca (numero de 0 a 1). "
+    "Se e_prato for false, deixe nome e culinaria vazios e ingredientes como lista vazia."
 )
 
 
